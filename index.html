@@ -1,5 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
+    <script>
+    // Right click disable karne ke liye
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Shortcuts block karne ke liye (Ctrl+S, Ctrl+P, Ctrl+U, F12)
+    document.onkeydown = function(e) {
+        if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 80 || e.keyCode === 123)) {
+            return false;
+        }
+        if (e.keyCode === 123) { // F12 (Inspect Element) block
+            return false;
+        }
+    };
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
